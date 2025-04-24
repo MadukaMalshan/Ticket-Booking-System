@@ -36,8 +36,12 @@ public class Movieimpl implements MovieService {
     }
 
     @Override
-    public Moviedto updateMovie(Long id, Moviedto movie) {
-        return null;
+    public void updateMovie(Moviedto movie) {
+        MovieEntity movieEntity = movieRepository.findById(movie.getId()).orElseThrow(() -> new RuntimeException("Movie not found"));
+        movieEntity.setName(movie.getName());
+        movieEntity.setGenre(movie.getGenre());
+        movieEntity.setDescription(movie.getDescription());
+        movieRepository.save(movieEntity);
     }
 
     @Override

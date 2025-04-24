@@ -37,8 +37,12 @@ public class Ticketimpl implements TicketService {
     }
 
     @Override
-    public Ticketdto updateTicket(Long id, Ticketdto ticketdto) {
-        return null;
+    public void updateTicket( Ticketdto ticketdto) {
+        ticketRepository.save(modelMapper.map(ticketdto, TicketEntity.class));
+
+
+
+
     }
 
     @Override

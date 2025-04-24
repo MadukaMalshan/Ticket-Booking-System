@@ -33,7 +33,11 @@ public class TicketController {
         ticketService.deleteTicket(id);
     }
 
+    @PutMapping("/update")
+    public void updateTicket(@RequestBody Ticketdto ticketdto){
+        ticketService.updateTicket(ticketdto);
 
+    }
 
 
 
