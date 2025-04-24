@@ -39,10 +39,6 @@ public class Ticketimpl implements TicketService {
     @Override
     public void updateTicket( Ticketdto ticketdto) {
         ticketRepository.save(modelMapper.map(ticketdto, TicketEntity.class));
-
-
-
-
     }
 
     @Override
